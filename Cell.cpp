@@ -5,7 +5,8 @@ Cell::Cell(int x, int y)
 {
   this.x=x;
   this.y=y;
-  this.life=false;
+  this.updateCell(0);
+ // this.life=false;
 }
 
 //void Cell::getNumOfNeighbors()
@@ -17,4 +18,8 @@ bool Cell:isAlive()
 void Cell::updateCell(bool l)
 {
   this.life=l;
+}
+int Cell::getNeighborsAlive()
+{
+  return this.neighborsAlive;
 }
