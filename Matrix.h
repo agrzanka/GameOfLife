@@ -4,10 +4,14 @@
 class Matrix
 {
 public:
+	int a;
+	int b;
 	Cell cells[100];
 
 	Matrix();
-	void setUpMatrix(int arg[100]);
+	
+	void updateMatrix();
+	int getNumOfAliveN(Cell c);
+	void setUpMatrix(bool initialArgs[100]);
 	void showMatrix();
-
 };
