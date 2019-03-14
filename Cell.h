@@ -1,13 +1,16 @@
 #pragma once
 class Cell
 {
-public:
-  Cell(int x, int y);
-  int x;
-  int y;
-  bool life;
+  private:
+    bool life;
+    int neighborsAlive; 
+  public:
+    Cell(int x, int y);
+    int x;
+    int y;
+ 
  // int getNumOfNeighbors();
-  bool isAlive();
-  void updateCell(bool l);
-
+    bool isAlive();
+    int getNeighborsAlive();
+    void updateCell(bool l);
 };
