@@ -1,25 +1,21 @@
 #include "Cell.h"
 #include "Matrix.h"
 #include <iostream>
+#include<vector>
 using namespace std;
 
-Cell::Cell(int x, int y)
+Cell::Cell(int id)
 {
-	this->x = x;
-	this->y = y;
-	this->updateCell(0);
-	// this.life=false;
+	this->id = id;
+	this->life = false;
 }
 
 Cell::Cell()
 {
-	this->x = NULL;
-	this->y = NULL;
-	this->updateCell(0);
-	// this.life=false;
+	this->id = NULL;
+	this->life=false;
 }
 
-//void Cell::getNumOfNeighbors()
 bool Cell :: isAlive()
 {
 	return this->life;
@@ -29,12 +25,43 @@ void Cell::updateCell(bool l)
 {
 	this->life = l;
 }
-int Cell::getNeighborsAlive()
+/*int Cell::getNumOfNeighborsAlive()
 {
-	return this->neighborsAlive;
-}
+	int nA = 0;
+	for (auto&i : this.neighborsIDs)
+	{
+		if()
+	}
+	return nA;
+}*/
 
-void Cell::setNeighborsAlive(int n)
+/*void Cell::setNeighborsAlive(int n)
 {
 	this->neighborsAlive = n;
-}
+}*/
+void Cell::setNeighbors(int a, int b)
+{
+	if (id >= a)
+	{
+		this->neighborsIDs.push_back(id - a);
+		if (id%a != 0)
+			this->neighborsIDs.push_back(id - a - 1);
+		if ((id + 1) % a != 0)
+			this->neighborsIDs.push_back(id - a + 1);
+	}
+
+	if (id <= a * (b - 1))
+	{
+		this->neighborsIDs.push_back(id + a);
+		if (id%a != 0)
+			this->neighborsIDs.push_back(id + a - 1);
+		if ((id + 1) % a != 0)
+			this->neighborsIDs.push_back(id + a + 1);
+	}
+
+	if (id%a != 0)
+		this->neighborsIDs.push_back(id - 1);
+	if ((id + 1) % a != 0)
+		this->neighborsIDs.push_back(id + 1);
+
+ }

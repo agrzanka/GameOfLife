@@ -6,7 +6,7 @@
 //void askUser(bool **initialArgs);
 
 int main()
-{
+{/*
 	std::cout << "HELLO";
 	bool initialArgs[10][10];
 	for (int i = 0; i < 10; i++)
@@ -49,7 +49,7 @@ int main()
 		std::cout << "\nround number: " << i + 1;
 		m.updateMatrix();
 		m.showMatrix();
-	}
+	}*/
 	system("PAUSE");
 }
 

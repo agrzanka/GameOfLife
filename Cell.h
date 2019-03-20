@@ -1,18 +1,22 @@
 #pragma once
+#include<iostream>
+#include<vector>
+using namespace std;
+
 class Cell
 {
 private:
 	bool life;
-	int neighborsAlive;
+	vector<int> neighborsIDs;
 public:
-	Cell(int x, int y);
+	Cell(int id);
 	Cell();
-	int x;
-	int y;
+	int id;
+	//vector<int> neighborsIDs; 
 
-	// int getNumOfNeighbors();
 	bool isAlive();
-	int getNeighborsAlive();
-	void setNeighborsAlive(int n);
+	//int getNumOfNeighborsAlive();
+	void setNeighbors(int a, int b);
 	void updateCell(bool l);
+
 };
