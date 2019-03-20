@@ -7,7 +7,7 @@
 
 int main()
 {
-	Cell c17(17);
+	Cell c17(8);
 	c17.setNeighbors(8, 5);
 	c17.showNeighbors();
 
@@ -15,6 +15,11 @@ int main()
 	c1.setLife(true);
 	c1.setNeighbors(8, 5);
 	c1.showNeighbors();
+
+	Cell c33(32);
+	c33.setLife(true);
+	c33.setNeighbors(8, 5);
+	c33.showNeighbors();
 
 	Board b(8, 5);
 	b.show();

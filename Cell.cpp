@@ -37,7 +37,7 @@ void Cell::setNeighbors(int a, int b)
 			this->neighborsIDs.push_back(id - a + 1);
 	}
 
-	if (id <= a * (b - 1))
+	if (id < a * (b - 1))
 	{
 		this->neighborsIDs.push_back(id + a);
 		if (id%a != 0)
@@ -74,7 +74,7 @@ void Cell::setNeighbors(int a, int b)
 	*/
 }
 
-vector<int> Cell::getNeighbors()
+const vector<int> Cell::getNeighbors()
 {
 	return this->neighborsIDs;
 }
@@ -84,7 +84,18 @@ void Cell::showNeighbors()
 	cout << endl;
 	cout << "cell id: " << id << endl;
 	cout << "cell life: " << isAlive() << endl;
-	for (auto&i : neighborsIDs)
+	for (auto&i : this->neighborsIDs)
 		cout << i << "\t";
 	cout << endl;
+}
+
+int Cell::getNumOfNeighborsAlive(vector<Cell>n)
+{
+	int nA = 0;
+	for (auto&i : neighborsIDs)
+	{
+		if (n[i].isAlive() == 1)
+			nA++;
+	}
+	return nA;
 }

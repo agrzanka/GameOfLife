@@ -13,11 +13,13 @@ public:
 	Cell();
 	int id;
 	vector<int> neighborsIDs;
+	//int numOfNeighbors;
 
 	bool isAlive();
-	//int getNumOfNeighborsAlive();
+	//void countNeighbors();
+	int getNumOfNeighborsAlive(vector<Cell>n);
 	void setNeighbors(int a, int b);
-	vector<int> getNeighbors();
+	const vector<int> getNeighbors();
 	void setLife(bool l);
 
 	void showNeighbors();
