@@ -7,16 +7,19 @@ class Cell
 {
 private:
 	bool life;
-	vector<int> neighborsIDs;
+	//vector<int> neighborsIDs;
 public:
 	Cell(int id);
 	Cell();
 	int id;
-	//vector<int> neighborsIDs; 
+	vector<int> neighborsIDs;
 
 	bool isAlive();
 	//int getNumOfNeighborsAlive();
 	void setNeighbors(int a, int b);
-	void updateCell(bool l);
+	vector<int> getNeighbors();
+	void setLife(bool l);
+
+	void showNeighbors();
 
 };
