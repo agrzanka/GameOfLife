@@ -1,5 +1,4 @@
 #include "Cell.h"
-//#include "Matrix.h"
 #include <iostream>
 #include<vector>
 using namespace std;
@@ -87,15 +86,4 @@ void Cell::showNeighbors()
 	for (auto&i : this->neighborsIDs)
 		cout << i << "\t";
 	cout << endl;
-}
-
-int Cell::getNumOfNeighborsAlive(vector<Cell>n)
-{
-	int nA = 0;
-	for (auto&i : neighborsIDs)
-	{
-		if (n[i].isAlive() == 1)
-			nA++;
-	}
-	return nA;
 }
