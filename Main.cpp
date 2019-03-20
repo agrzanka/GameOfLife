@@ -26,6 +26,8 @@ int main()
 	blinker.push_back(21);
 	blinker.push_back(29);
 
+	cout << "==================================BLINKER==================================" << endl;
+
 	b.init(blinker);
 	b.show();
 
@@ -33,6 +35,19 @@ int main()
 	{
 		b.update();
 		b.show();
+	}
+
+	Board b2(8, 5);
+	b2.show();
+	vector<int>glider = { 2,9,17,18,19 };
+	cout << "\n==================================GLIDER==================================\n";
+	b2.init(glider);
+	b2.show();
+
+	for (int i = 0; i < 8; i++)
+	{
+		b2.update();
+		b2.show();
 	}
 
 

@@ -43,7 +43,7 @@ void Board::update()
 			if (cells[i].isAlive() == 1)
 				nA++;
 
-		if (c.isAlive() == 0 && nA >= 3)
+		if (c.isAlive() == 0 && nA == 3)
 			nextRoundAlive.push_back(c.id);
 
 		else if (c.isAlive() && (nA > 3 || nA < 2))
