@@ -53,7 +53,7 @@ void Cell::setNeighbors(int a, int b)
 
 	//additional constraints regarding cylindric boundary conditions 
 
-	/*if (id < a)
+	if (id < a)
 	{
 		this->neighborsIDs.push_back(id + (a*(b - 1)));
 		if (id%a != 0)
@@ -62,7 +62,7 @@ void Cell::setNeighbors(int a, int b)
 			this->neighborsIDs.push_back(id + (a*(b - 1)) + 1);
 	}
 
-	if (id >=a*(b-1))
+	if (id >= a * (b - 1))
 	{
 		this->neighborsIDs.push_back(id - (a*(b - 1)));
 		if (id%a != 0)
@@ -70,7 +70,7 @@ void Cell::setNeighbors(int a, int b)
 		if ((id + 1) % a != 0)
 			this->neighborsIDs.push_back(id - (a*(b - 1)) + 1);
 	}
-	*/
+
 }
 
 const vector<int> Cell::getNeighbors()

@@ -50,6 +50,19 @@ int main()
 		b2.show();
 	}
 
+	Board b3(50, 25);
+	b3.show();
+	vector<int>glider2 = { 47,96,146,147,148 };
+	cout << "\n==================================GLIDER==================================\n";
+	b3.init(glider2);
+	b3.show();
+
+	for (int i = 0; i < 200; i++)
+	{
+		b3.update();
+		b3.show();
+	}
+
 
 	system("PAUSE");
 }

@@ -65,7 +65,8 @@ void Board::show()
 	for (int i = a - 1; i > -1; i--)
 	{
 		for (int j = 0; j < b; j++)
-			cout << cells[i + j * a].isAlive() << "\t";
+			cout << cells[i + j * a].isAlive();
+		//cout << cells[i+j*a].isAlive() << "\t";		
 		cout << endl;
 	}
 }
