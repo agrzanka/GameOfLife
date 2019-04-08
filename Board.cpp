@@ -62,11 +62,16 @@ void Board::update()
 void Board::show()
 {
 	cout << "\nBOARD:\n";
-	for (int i = a - 1; i > -1; i--)
+	/*for (int i = 0; i < a ; i++)
 	{
 		for (int j = 0; j < b; j++)
-			cout << cells[i + j * a].isAlive();
-		//cout << cells[i+j*a].isAlive() << "\t";		
+			cout << cells[j + i * b].id << "\t";
+		cout << endl;
+	}*/
+	for (int i = 0; i < a; i++)
+	{
+		for (int j = 0; j < b; j++)
+			cout << cells[j + i * b].isAlive();
 		cout << endl;
 	}
 }

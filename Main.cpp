@@ -22,9 +22,9 @@ int main()
 	b.show();
 
 	vector<int>blinker;
-	blinker.push_back(13);
-	blinker.push_back(21);
-	blinker.push_back(29);
+	blinker.push_back(2);
+	blinker.push_back(7);
+	blinker.push_back(12);
 
 	cout << "==================================BLINKER==================================" << endl;
 
@@ -37,9 +37,9 @@ int main()
 		b.show();
 	}
 
-	Board b2(8, 5);
+	Board b2(8, 8);
 	b2.show();
-	vector<int>glider = { 2,9,17,18,19 };
+	vector<int>glider = { 2,8,10,17,18 };
 	cout << "\n==================================GLIDER==================================\n";
 	b2.init(glider);
 	b2.show();
@@ -52,7 +52,7 @@ int main()
 
 	Board b3(50, 25);
 	b3.show();
-	vector<int>glider2 = { 47,96,146,147,148 };
+	vector<int>glider2 = { 2,25,27,51,52 };
 	cout << "\n==================================GLIDER==================================\n";
 	b3.init(glider2);
 	b3.show();
