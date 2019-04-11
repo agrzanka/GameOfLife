@@ -53,7 +53,7 @@ void Cell::setNeighbors(int a, int b)
 		this->neighborsIDs.push_back(id + 1);
 		this->neighborsIDs.push_back(id + b + 1);
 		this->neighborsIDs.push_back(id + b);
-		this->neighborsIDs.push_back(id - b);
+		this->neighborsIDs.push_back(id + 2 * b - 1);
 	}
 	//right-upper corner
 	else if (id == (b - 1))
@@ -61,7 +61,7 @@ void Cell::setNeighbors(int a, int b)
 		this->neighborsIDs.push_back(id - 1);
 		this->neighborsIDs.push_back(id + tmp - 1);
 		this->neighborsIDs.push_back(id + tmp);
-		this->neighborsIDs.push_back(id + tmp + 1);
+		this->neighborsIDs.push_back(id + (a - 2)*b + 1);
 
 		this->neighborsIDs.push_back(id - b + 1);
 		this->neighborsIDs.push_back(id + 1);
@@ -90,9 +90,79 @@ void Cell::setNeighbors(int a, int b)
 		this->neighborsIDs.push_back(id - b + 1);
 
 		this->neighborsIDs.push_back(id + 1);
-		this->neighborsIDs.push_back(id - tmp - 1);
+		this->neighborsIDs.push_back(id - tmp + 1);
 		this->neighborsIDs.push_back(id - tmp);
 		this->neighborsIDs.push_back(id - (a - 2)*b - 1);
+	}
+
+	//---OTHERWISE---
+
+	//if the cell lies on the left boundary of the board
+	else if (id%b == 0)
+	{
+		this->neighborsIDs.push_back(id + b - 1);
+		this->neighborsIDs.push_back(id - 1);
+		this->neighborsIDs.push_back(id - b);
+		this->neighborsIDs.push_back(id - b + 1);
+
+		this->neighborsIDs.push_back(id + 1);
+		this->neighborsIDs.push_back(id + b + 1);
+		this->neighborsIDs.push_back(id + b);
+		this->neighborsIDs.push_back(id + 2 * b - 1);
+	}
+	//if the cell lies on the right boundary of the board
+	else if ((id + 1) % b == 0)
+	{
+		this->neighborsIDs.push_back(id - 1);
+		this->neighborsIDs.push_back(id - b - 1);
+		this->neighborsIDs.push_back(id - b);
+		this->neighborsIDs.push_back(id - 2 * b + 1);
+
+		this->neighborsIDs.push_back(id - b + 1);
+		this->neighborsIDs.push_back(id + 1);
+		this->neighborsIDs.push_back(id + b);
+		this->neighborsIDs.push_back(id + b - 1);
+	}
+	//if the cell lies on the upper bounady of the board
+	else if (id < b)
+	{
+		this->neighborsIDs.push_back(id - 1);
+		this->neighborsIDs.push_back(id + tmp - 1);
+		this->neighborsIDs.push_back(id + tmp);
+		this->neighborsIDs.push_back(id + tmp + 1);
+
+		this->neighborsIDs.push_back(id + 1);
+		this->neighborsIDs.push_back(id + b + 1);
+		this->neighborsIDs.push_back(id + b);
+		this->neighborsIDs.push_back(id + b - 1);
+	}
+	//if the cell lies on the bottom boundary of the board
+	else if (id > tmp)
+	{
+		this->neighborsIDs.push_back(id - 1);
+		this->neighborsIDs.push_back(id - b - 1);
+		this->neighborsIDs.push_back(id - b);
+		this->neighborsIDs.push_back(id - b + 1);
+
+		this->neighborsIDs.push_back(id + 1);
+		this->neighborsIDs.push_back(id - tmp + 1);
+		this->neighborsIDs.push_back(id - tmp);
+		this->neighborsIDs.push_back(id - tmp - 1);
+	}
+
+	//	---OTHERWISE---
+	//inner cells of the board
+	else
+	{
+		this->neighborsIDs.push_back(id - 1);
+		this->neighborsIDs.push_back(id - b - 1);
+		this->neighborsIDs.push_back(id - b);
+		this->neighborsIDs.push_back(id - b + 1);
+
+		this->neighborsIDs.push_back(id + 1);
+		this->neighborsIDs.push_back(id + b + 1);
+		this->neighborsIDs.push_back(id + b);
+		this->neighborsIDs.push_back(id + b - 1);
 	}
 
 

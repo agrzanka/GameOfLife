@@ -21,6 +21,7 @@ int main()
 	Board b(8, 5);
 	b.show();
 
+
 	vector<int>blinker;
 	blinker.push_back(2);
 	blinker.push_back(7);

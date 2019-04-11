@@ -74,6 +74,25 @@ void Board::show()
 			cout << cells[j + i * b].isAlive();
 		cout << endl;
 	}
+	/*cout << "\n0:\n";
+	this->cells[0].showNeighbors();
+	cout << "\n2:\n";
+	this->cells[2].showNeighbors();
+	cout << "\n3:\n";
+	this->cells[3].showNeighbors();
+	cout << "\n4:\n";
+	this->cells[4].showNeighbors();
+	cout << "\n14:\n";
+	this->cells[14].showNeighbors();
+	cout << "\n39:\n";
+	this->cells[39].showNeighbors();
+	cout << "\n38:\n";
+	this->cells[38].showNeighbors();
+	cout << "\n35:\n";
+	this->cells[35].showNeighbors();
+	cout << "\n15:\n";
+	this->cells[15].showNeighbors();*/
+
 }
 
 void Board::init(vector<int>alive)
